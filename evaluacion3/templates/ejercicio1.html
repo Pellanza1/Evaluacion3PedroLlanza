@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <form method="POST">
+        <label>Nota 1:</label><input type="number" name="nota1" min="10" max="70" required><br>
+        <label>Nota 2:</label><input type="number" name="nota2" min="10" max="70" required><br>
+        <label>Nota 3:</label><input type="number" name="nota3" min="10" max="70" required><br>
+        <label>Asistencia (%):</label><input type="number" name="asistencia" min="0" max="100" required><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Mostrar resultados solo si están disponibles -->
+    {% if resultado %}
+        <h2>Resultado:</h2>
+        <p>Promedio: {{ resultado.promedio }}</p>
+        <p>Estado: {{ resultado.estado }}</p>
+    {% endif %}
+
+    <a href="/"><button>Volver al menú</button></a>
+</body>
+</html>

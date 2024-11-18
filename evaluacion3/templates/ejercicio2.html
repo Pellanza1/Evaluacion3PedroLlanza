@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <form method="POST">
+        <label>Nombre 1:</label><input type="text" name="nombre1" required><br>
+        <label>Nombre 2:</label><input type="text" name="nombre2" required><br>
+        <label>Nombre 3:</label><input type="text" name="nombre3" required><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Mostrar resultados solo si están disponibles -->
+    {% if resultado %}
+        <h2>Resultado:</h2>
+        <p>Nombre más largo: {{ resultado.nombre }}</p>
+        <p>Longitud: {{ resultado.longitud }} caracteres</p>
+    {% endif %}
+
+    <a href="/"><button>Volver al menú</button></a>
+</body>
+</html>
